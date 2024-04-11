@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faRedo} from '@fortawesome/free-solid-svg-icons';
 import Node from './Node/Node';
 import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra';
 
@@ -73,14 +75,23 @@ export default class PathfindingVisualizer extends Component {
     this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
+  reloadPage() {
+    window.location.reload();
+  }
+
   render() {
     const {grid, mouseIsPressed} = this.state;
 
     return (
       <>
-        <button onClick={() => this.visualizeDijkstra()} className="button">
-          Visualize Dijkstra's Algorithm
-        </button>
+        <div className="btn-div">
+          <button onClick={() => this.reloadPage()} className="button btn2">
+            <FontAwesomeIcon icon={faRedo} />
+          </button>
+          <button onClick={() => this.visualizeDijkstra()} className="button">
+            Visualize Dijkstra's Algorithm
+          </button>
+        </div>
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (

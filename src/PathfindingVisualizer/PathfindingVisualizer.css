@@ -21,6 +21,12 @@ body {
   margin: 0;
 }
 
+.btn-div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
 .grid {
   background-color: whitesmoke;
   margin-top: 30px;
@@ -79,6 +85,13 @@ body {
 .button:hover,
 .button:hover::before {
   animation: animate 0.5s infinite linear;
+}
+
+.btn2 {
+  padding: 10px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
 }
 
 @keyframes animate {
